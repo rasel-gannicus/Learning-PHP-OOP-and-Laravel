@@ -1,26 +1,30 @@
 <?php
     class Car {
-        public $brand ;
-        public $country ;
+        public $brand ; 
+        public $country ; 
 
-        // constructor
-        function __construct($name){
-            $this->brand = $name ; 
+        public function __construct($name, $origin){
+            $this->brand = $name ;
+            $this->country = $origin ;
         }
 
-        // destructor
-        function __destruct(){
-            echo "This {$this->brand} from parent class <br /> " ;
+        public function message (){
+            echo ("We have {$this->brand} from {$this->country} <br />") ;
         }
     }
 
     class Bus extends Car {
-        function __destruct(){
-            echo "This is from inherited class "
-        }
+        public function message() {
+            echo "Am I a Car or a Bus ? ";
+          }
     }
 
-    $audi = new Car('Audi') ;
-    $volvo = new Bus('Volvo') ;
+    $audi = new Car("Audi", "England") ;
+    $volvo = new Bus("Volvo", "France") ;
+
+    echo ("Car Brand : ".$audi->brand) ;
+    echo("<br />") ;
+    $audi->message() ;
+    $volvo->message() ;
 
 ?>
