@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('listings',[
-        'heading' => 'Heading is here !',
+        'heading' => 'Welcome to Job Listings!',
         'listings' => [
             [
             'id' => 1 ,
