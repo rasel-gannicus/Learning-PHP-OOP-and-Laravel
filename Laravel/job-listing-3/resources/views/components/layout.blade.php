@@ -13,7 +13,6 @@
 <body>
 
     @include('partials._navbar')
-    @include('partials._hero')
     <main>
         {{ $slot }}
     </main>
